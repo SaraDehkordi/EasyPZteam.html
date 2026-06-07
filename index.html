@@ -591,19 +591,13 @@ function buildFigPinEl(fi) {
   el.id = 'figpin-' + fi;
   el.onclick = e => { e.stopPropagation(); openFigPin(fi); };
 
-  // ۱. بررسی می‌کنیم که آیا عکس پیش‌فرضی در آرایه مشخص شده است یا خیر
+  // ۱. بررسی وجود تصویر پیش‌فرض در دیتای اصلی
   const hasImg = f.src ? true : false;
 
   el.innerHTML = `
     <div class="fig-tape"></div>
     <div class="fig-photo">
-      <div class="fig-photo-placeholder" id="figpin-ph-${fi}" style="${hasImg ? 'display:none;' : ''}">
-        <span>${f.hint}</span>
-        <button class="fig-upload-btn" onclick="event.stopPropagation();triggerFigPinUpload(${fi})">+ Add</button>
-      </div>
-      
-      ${hasImg ? `<img src="${f.src}" style="width:100%; height:100%; object-fit:cover; display:block;" />` : ''}
-      
+      ${hasImg ? `<img src="${f.src}" style="width:100%; height:100%; object-fit:cover; display:block; cursor:zoom-in;" />` : `<div class="fig-photo-placeholder"><span>${f.hint}</span></div>`}
       <div class="fig-caption">${f.caption}</div>
     </div>`;
 
@@ -795,10 +789,16 @@ function closeLightbox(){document.getElementById('lightbox').classList.remove('o
 // ═══════════════════════════════════════════════════════════════
 //  FIGURE PIN
 // ═══════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════
+//  FIGURE PIN (اصلاح شده برای باز شدن مستقیم عکس بدون منوی آپلود)
+// ═══════════════════════════════════════════════════════════════
 function openFigPin(fi){
-  const src=figPinImages[fi];
-  if(src) openLightbox(src,figures[fi].caption);
-  else triggerFigPinUpload(fi);
+  const f = figures[fi];
+  const src = f.src || figPinImages[fi]; // اولویت با عکس تعریف شده در پروژه است
+  
+  if(src) {
+    openLightbox(src, f.caption);
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════
