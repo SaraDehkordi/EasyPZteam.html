@@ -609,8 +609,6 @@ function buildFigPinEl(fi) {
 
   return el;
 }
-
-
 // ═══════════════════════════════════════════════════════════════
 // ═══════════════════════════════════════════════════════════════
 //  BUILD DETECTIVE CARDS
@@ -651,7 +649,6 @@ function buildDetectives() {
   });
 }
 
-// تابع triggerDetPhoto را هم کاملاً پاک کنید چون دیگر نیازی به آپلود دستی نیست.
 // ═══════════════════════════════════════════════════════════════
 //  OPEN NODE MODAL (COMPLETE VERSION)
 // ═══════════════════════════════════════════════════════════════
@@ -719,7 +716,7 @@ function openNode(index) {
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // خطوط حیاتی باز شدن و فعال‌سازی انیمیشن مدال (که قطع شده بودند)
+  // خطوط حیاتی باز شدن و فعال‌سازی انیمیشن مدال
   // ═══════════════════════════════════════════════════════════════
   const ov = document.getElementById('modal-overlay');
   if (ov) {
@@ -732,26 +729,7 @@ function openNode(index) {
   if (typeof unlockNext === 'function') unlockNext(index);
   if (typeof updateDots === 'function') updateDots(index);
 }
-  // ═══════════════════════════════════════════════════════════════
-
-  const ov=document.getElementById('modal-overlay');
-  ov.classList.remove('anim-out');
-  ov.classList.add('open','anim-in');
-  setTimeout(()=>ov.classList.remove('anim-in'),300);
-
-  unlockNext(index);
-  updateDots(index);
-}
-  // ═══════════════════════════════════════════════════════════════
-
-  const ov=document.getElementById('modal-overlay');
-  ov.classList.remove('anim-out');
-  ov.classList.add('open','anim-in');
-  setTimeout(()=>ov.classList.remove('anim-in'),300);
-
-  unlockNext(index);
-  updateDots(index);
-}
+// ═══════════════════════════════════════════════════════════════
  // ══════════════════════════════════════════════════════════
 //  NEXT — close popup → draw string → shimmer next → wait for click
 // ═══════════════════════════════════════════════════════════════
