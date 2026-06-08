@@ -330,12 +330,43 @@
 //  DETECTIVE TEAM  — edit names, roles, emojis and badge colors
 // ═══════════════════════════════════════════════════════════════
 const detectives = [
-  { name:"Sara",   role:"Lead Investigator", emoji:"🐒", color:"#8b3a8b", badge:"PZ Expert",      badgeColor:"#c4b0d8", badgeText:"#2a0a3e" },
-  { name:"Marcus", role:"Neural Cartographer",emoji:"🧠",color:"#1a6e3a", badge:"2002a Paper",    badgeColor:"#a8d4a8", badgeText:"#0a2e0a" },
-  { name:"Masoud", role:"Methods Analyst",   emoji:"🔬", color:"#8b4513", badge:"Microstimulation",badgeColor:"#f0c888", badgeText:"#3e1e00" , src:"Massoud_photo2.png" },
-  { name:"Sara",   role:"Evidence Officer",  emoji:"✋", color:"#8b1a1a", badge:"Clothing Effect", badgeColor:"#e8a0a0", badgeText:"#3e0000" , src: "Sara_photo2.JPG" },
-  { name:"Xinyi",  role:"Field Observer",    emoji:"📊", color:"#1a3a6e", badge:"1994 Paper",      badgeColor:"#d4c9a0", badgeText:"#3a2e10" },
-  { name:"Alena",  role:"Case Archivist",    emoji:"🗂️", color:"#4a4a1a", badge:"Synthesis",       badgeColor:"#c4b0d8", badgeText:"#2a0a3e" , program: "Mind, Brain and Behaviour", src:null},
+  { name:"Sara",   role:"ARCHITECT",          emoji:"🐒", color:"#8b3a8b",
+    badges:[
+      {label:"PZ Expert",       bg:"#c4b0d8", text:"#2a0a3e"},
+      {label:"Code Architect",  bg:"#b0c4d8", text:"#0a1e3e"},
+      {label:"2002A Paper",     bg:"#a8d4a8", text:"#0a2e0a"},
+    ]},
+  { name:"Marcus", role:"DATA DECODER",        emoji:"🧠", color:"#1a6e3a",
+    badges:[
+      {label:"2002A Paper",     bg:"#a8d4a8", text:"#0a2e0a"},
+      {label:"Exercise C",      bg:"#c4d8b0", text:"#1e3a0a"},
+      {label:"Data Analyst",    bg:"#f0c888", text:"#3e1e00"},
+    ]},
+  { name:"Masoud", role:"FIELD ANALYST",       emoji:"🔬", color:"#8b4513", src:"Massoud_photo2.png",
+    badges:[
+      {label:"1994 Paper",      bg:"#f0c888", text:"#3e1e00"},
+      {label:"Exercise A",      bg:"#c4d8b0", text:"#1e3a0a"},
+      {label:"Data Selection",  bg:"#e8d0a0", text:"#3a2000"},
+    ]},
+  { name:"Sara",   role:"EVIDENCE OFFICER",    emoji:"✋", color:"#8b1a1a", src:"Sara_photo2.JPG",
+    badges:[
+      {label:"1994 Paper",      bg:"#f0c888", text:"#3e1e00"},
+      {label:"Exercise A",      bg:"#c4d8b0", text:"#1e3a0a"},
+      {label:"Data Selection",  bg:"#e8d0a0", text:"#3a2000"},
+    ]},
+  { name:"Xinyi",  role:"TEMPORAL OBSERVER",   emoji:"📊", color:"#1a3a6e",
+    badges:[
+      {label:"1994 Paper",      bg:"#d4c9a0", text:"#3a2e10"},
+      {label:"500ms Window",    bg:"#b0c4d8", text:"#0a1e3e"},
+      {label:"Data Selection",  bg:"#e8d0a0", text:"#3a2000"},
+    ]},
+  { name:"Alena",  role:"PATTERN DECODER",     emoji:"🗂️", color:"#4a4a1a",
+    program:"Mind, Brain and Behaviour", src:null,
+    badges:[
+      {label:"2002A Paper",     bg:"#a8d4a8", text:"#0a2e0a"},
+      {label:"500ms Window",    bg:"#b0c4d8", text:"#0a1e3e"},
+      {label:"Synthesis",       bg:"#c4b0d8", text:"#2a0a3e"},
+    ]},
 ];
 const detPhotos = {};
 
