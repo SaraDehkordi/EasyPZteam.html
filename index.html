@@ -330,33 +330,33 @@
 //  DETECTIVE TEAM  — edit names, roles, emojis and badge colors
 // ═══════════════════════════════════════════════════════════════
 const detectives = [
-  { name:"Sara",   role:"ARCHITECT", color:"#8b3a8b", src:"Pics/Myself_photo2.jpg",
+  { name:"Sara",   role:"ARCHITECT", color:"#8b3a8b", src:"Detective_Pictures/Myself_photo2.jpg",
     badges:[
       {label:"2002B Paper",       bg:"#c4b0d8", text:"#2a0a3e"},
       {label:"Code Architect",  bg:"#b0c4d8", text:"#0a1e3e"},
     ]},
-  { name:"Marcus", role:"DATA DECODER",  color:"#1a6e3a", src:"Pics/Marcus_photo3.jpg",
+  { name:"Marcus", role:"DATA DECODER",  color:"#1a6e3a", src:"Detective_Pictures/Marcus_photo3.jpg",
     badges:[
       {label:"2002B Paper",     bg:"#a8d4a8", text:"#0a2e0a"},
       {label:"Data Analyst",    bg:"#f0c888", text:"#3e1e00"},
     ]},
-  { name:"Masoud", role:"FIELD ANALYST",  color:"#8b4513", src:"Pics/Massoud_photo2.png",
+  { name:"Masoud", role:"FIELD ANALYST",  color:"#8b4513", src:"Detective_Pictures/Massoud_photo2.png",
     badges:[
       {label:"1994 Paper",      bg:"#f0c888", text:"#3e1e00"},
       {label:"Data Selection",  bg:"#e8d0a0", text:"#3a2000"},
     ]},
-  { name:"Sara",   role:"EVIDENCE OFFICER", color:"#8b1a1a", src:"Pics/Sara_photo2.JPG",
+  { name:"Sara",   role:"EVIDENCE OFFICER", color:"#8b1a1a", src:"Detective_Pictures/Sara_photo2.JPG",
     badges:[
       {label:"1994 Paper",      bg:"#f0c888", text:"#3e1e00"},
       {label:"Data Selection",  bg:"#e8d0a0", text:"#3a2000"},
     ]},
-  { name:"Xinyi",  role:"TEMPORAL OBSERVER", color:"#1a3a6e", src:"Pics/Xinyi_photo.jpeg",
+  { name:"Xinyi",  role:"TEMPORAL OBSERVER", color:"#1a3a6e", src:"Detective_Pictures/Xinyi_photo.jpeg",
     badges:[
       {label:"2002A Paper",      bg:"#d4c9a0", text:"#3a2e10"},
       {label:"PZ Expert",  bg:"#e8d0a0", text:"#3a2000"},
     ]},
   { name:"Alena",  role:"PATTERN DECODER", color:"#4a4a1a",
-    program:"Mind, Brain and Behaviour", src:"Pics/Alena_photo.jpeg",
+    program:"Mind, Brain and Behaviour", src:"Detective_Pictures/Alena_photo.jpeg",
     badges:[
       {label:"2002A Paper",     bg:"#a8d4a8", text:"#0a2e0a"},
       {label:"Synthesis",       bg:"#c4b0d8", text:"#2a0a3e"},
@@ -393,12 +393,12 @@ const boardLayout = [
 //  FIGURE PINS
 // ═══════════════════════════════════════════════════════════════
 const figures = [
-  {caption:"Penfield Homunculus",         hint:"Add classical motor map image",   src:"Freda_Book_Image.jpeg"},
-  {caption:"Fig. 1C — Arm-centered RF",   hint:"Fig 1C: RF moves with arm (1994)",  src:"RF_moves_with_arm.jpeg"},
-  {caption:"Fig. 1 — Hand-to-mouth",      hint:"Fig 1: 11 trajectories converge on mouth (2002a)",src:"Hand_to_mouth.jpeg"},
-  {caption:"Fig. 9 — Cortical map",       hint:"Fig 9: Full precentral gyrus map (2002a)", src:"Unified_cortical_map.jpeg"},
-  {caption:"Fig. 1B-E — Spike rates",     hint:"Fig 1B-E: Chair vs cotton swab (2002b)", src: "Spike_comparison.jpeg"},
-  {caption:"Fig. 2 — Gaze vs arm",        hint:"Fig 2: RF stays fixed across eye positions (1994)",src:"Gaze_vs_arm_test.jpeg"},
+  {caption:"Penfield Homunculus",         hint:"Add classical motor map image",   src:"Paper_Pictures/Freda_Book_Image.jpeg"},
+  {caption:"Fig. 1C — Arm-centered RF",   hint:"Fig 1C: RF moves with arm (1994)",  src:"Paper_Pictures/RF_moves_with_arm.jpeg"},
+  {caption:"Fig. 1 — Hand-to-mouth",      hint:"Fig 1: 11 trajectories converge on mouth (2002a)",src:"Paper_Pictures/Hand_to_mouth.jpeg"},
+  {caption:"Fig. 9 — Cortical map",       hint:"Fig 9: Full precentral gyrus map (2002a)", src:"Paper_Pictures/Unified_cortical_map.jpeg"},
+  {caption:"Fig. 1B-E — Spike rates",     hint:"Fig 1B-E: Chair vs cotton swab (2002b)", src: "Paper_Pictures/Spike_comparison.jpeg"},
+  {caption:"Fig. 2 — Gaze vs arm",        hint:"Fig 2: RF stays fixed across eye positions (1994)",src:"Paper_Pictures/Gaze_vs_arm_test.jpeg"},
 ];
 const figPinImages = {};
 
@@ -430,8 +430,8 @@ const nodes = [
     preview:"Visual RFs move with the arm, not the eyes. Motor cortex tracks body-relative space.",
     thumbnail:"fig1-c-e1.jpeg",
     figures:[
-      {caption:"Fig. 1C — RF moves with arm",hint:"Add Fig 1C: visual RF dragged across midline with arm",src:"RF_moves_with_arm.jpeg"},
-      {caption:"Fig. 2 — Gaze vs arm test",  hint:"Add Fig 2: 4×3×2 paradigm showing RF ignores eye position",src:"Gaze_vs_arm_test.jpeg"}
+      {caption:"Fig. 1C — RF moves with arm",hint:"Add Fig 1C: visual RF dragged across midline with arm",src:"Paper_Pictures/RF_moves_with_arm.jpeg"},
+      {caption:"Fig. 2 — Gaze vs arm test",  hint:"Add Fig 2: 4×3×2 paradigm showing RF ignores eye position",src:"Paper_Pictures/Gaze_vs_arm_test.jpeg"}
     ],
     sections:[
       {label:"Q1 · What Was Assumed",
@@ -452,10 +452,10 @@ const nodes = [
     type:"finding",
     preview:"Motor cortex maps spatial locations, not muscles. PZ is the defensive subregion.",
     figures:[
-      {caption:"Fig. 1 — Hand-to-mouth",     hint:"Add Fig 1: 11 trajectories all converging on mouth",src:"Hand_to_mouth.jpeg"},
-      {caption:"Fig. 2A-G — Six postures",   hint:"Add Fig 2: six posture examples + mouth posture",src:"Six_postures.jpeg"},
-      {caption:"Fig. 9 — Unified cortical map",hint:"Add Fig 9: summary map of all precentral subregions",src:"Unified_cortical_map.jpeg"},
-      {caption:"Fig. 3 — EMG same site",     hint:"Add Fig 3: different muscles from same site by arm position",src:"EMG_same_site.jpeg"}
+      {caption:"Fig. 1 — Hand-to-mouth",     hint:"Add Fig 1: 11 trajectories all converging on mouth",src:"Paper_Pictures/Hand_to_mouth.jpeg"},
+      {caption:"Fig. 2A-G — Six postures",   hint:"Add Fig 2: six posture examples + mouth posture",src:"Paper_Pictures/Six_postures.jpeg"},
+      {caption:"Fig. 9 — Unified cortical map",hint:"Add Fig 9: summary map of all precentral subregions",src:"Paper_Pictures/Unified_cortical_map.jpeg"},
+      {caption:"Fig. 3 — EMG same site",     hint:"Add Fig 3: different muscles from same site by arm position",src:"Paper_Pictures/EMG_same_site.jpeg"}
     ],
     sections:[
       {label:"Q1 · What Was Assumed",
@@ -476,9 +476,9 @@ const nodes = [
     type:"finding",
     preview:"Same skin, same spot — chair: silence. Novel rod: neurons fire. Context matters.",
     figures:[
-      {caption:"Fig. 1B-E — Spike comparison",hint:"Add Fig 1B-E: spike rates chair vs. cotton swab",src:"Spike_comparison.jpeg"},
-      {caption:"Fig. 2 — Novel rod",          hint:"Add Fig 2: rod inserted into chair, neurons fire on contact",src:"Novel_rod.jpeg"},
-      {caption:"Fig. 3 — Jaw / neck plate",   hint:"Add Fig 3: jaw RF — no response to familiar neck plate",src:"neck_plate.jpeg"}
+      {caption:"Fig. 1B-E — Spike comparison",hint:"Add Fig 1B-E: spike rates chair vs. cotton swab",src:"Paper_Pictures/Spike_comparison.jpeg"},
+      {caption:"Fig. 2 — Novel rod",          hint:"Add Fig 2: rod inserted into chair, neurons fire on contact",src:"Paper_Pictures/Novel_rod.jpeg"},
+      {caption:"Fig. 3 — Jaw / neck plate",   hint:"Add Fig 3: jaw RF — no response to familiar neck plate",src:"Paper_Pictures/neck_plate.jpeg"}
     ],
     sections:[
       {label:"Q1 · What Was Assumed",
@@ -596,7 +596,7 @@ function buildNodeEl(idx) {
   el.id = 'node-' + idx;
   el.onclick = () => openNode(idx);
   
-  // لاین مربوط به card-thumb-placeholder کاملاً حذف شد
+  //
   el.innerHTML = `
     <div class="pin"><div class="pin-head"></div><div class="pin-body"></div></div>
     <div class="note-card ${idx === 0 ? 'active' : 'locked'}">
@@ -616,7 +616,7 @@ function buildFigPinEl(fi) {
   el.id = 'figpin-' + fi;
   el.onclick = e => { e.stopPropagation(); openFigPin(fi); };
 
-  // ۱. بررسی وجود تصویر پیش‌فرض در دیتای اصلی
+  // 
   const hasImg = f.src ? true : false;
 
   el.innerHTML = `
