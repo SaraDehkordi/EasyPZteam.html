@@ -330,32 +330,32 @@
 //  DETECTIVE TEAM  — edit names, roles, emojis and badge colors
 // ═══════════════════════════════════════════════════════════════
 const detectives = [
-  { name:"Sara",   role:"ARCHITECT",          emoji:"🐒", color:"#8b3a8b", src:"Myself_photo2.jpg",
+  { name:"Sara",   role:"ARCHITECT", color:"#8b3a8b", src:"Myself_photo2.jpg",
     badges:[
       {label:"2002B Paper",       bg:"#c4b0d8", text:"#2a0a3e"},
       {label:"Code Architect",  bg:"#b0c4d8", text:"#0a1e3e"},
     ]},
-  { name:"Marcus", role:"DATA DECODER",        emoji:"🧠", color:"#1a6e3a", src:"Marcus_photo3.jpg",
+  { name:"Marcus", role:"DATA DECODER",  color:"#1a6e3a", src:"Marcus_photo3.jpg",
     badges:[
       {label:"2002B Paper",     bg:"#a8d4a8", text:"#0a2e0a"},
       {label:"Data Analyst",    bg:"#f0c888", text:"#3e1e00"},
     ]},
-  { name:"Masoud", role:"FIELD ANALYST",       emoji:"🔬", color:"#8b4513", src:"Massoud_photo2.png",
+  { name:"Masoud", role:"FIELD ANALYST",  color:"#8b4513", src:"Massoud_photo2.png",
     badges:[
       {label:"1994 Paper",      bg:"#f0c888", text:"#3e1e00"},
       {label:"Data Selection",  bg:"#e8d0a0", text:"#3a2000"},
     ]},
-  { name:"Sara",   role:"EVIDENCE OFFICER",    emoji:"✋", color:"#8b1a1a", src:"Sara_photo2.JPG",
+  { name:"Sara",   role:"EVIDENCE OFFICER", color:"#8b1a1a", src:"Sara_photo2.JPG",
     badges:[
       {label:"1994 Paper",      bg:"#f0c888", text:"#3e1e00"},
       {label:"Data Selection",  bg:"#e8d0a0", text:"#3a2000"},
     ]},
-  { name:"Xinyi",  role:"TEMPORAL OBSERVER",   emoji:"📊", color:"#1a3a6e", src:"Xinyi_photo.jpeg",
+  { name:"Xinyi",  role:"TEMPORAL OBSERVER", color:"#1a3a6e", src:"Xinyi_photo.jpeg",
     badges:[
       {label:"2002A Paper",      bg:"#d4c9a0", text:"#3a2e10"},
       {label:"PZ Expert",  bg:"#e8d0a0", text:"#3a2000"},
     ]},
-  { name:"Alena",  role:"PATTERN DECODER",     emoji:"🗂️", color:"#4a4a1a",
+  { name:"Alena",  role:"PATTERN DECODER", color:"#4a4a1a",
     program:"Mind, Brain and Behaviour", src:"Alena_photo.jpeg",
     badges:[
       {label:"2002A Paper",     bg:"#a8d4a8", text:"#0a2e0a"},
@@ -634,14 +634,14 @@ function buildFigPinEl(fi) {
 // ═══════════════════════════════════════════════════════════════
 function buildDetectives() {
   const grid = document.getElementById('detective-grid');
-  grid.innerHTML = ''; // پاک کردن محتوای قبلی برای اطمینان
+  grid.innerHTML = ''; // removing previous context
 
   detectives.forEach((d, i) => {
     const card = document.createElement('div');
     card.className = 'detective-card'; 
     card.id = 'det-card-' + i;
 
-    // ۱. بررسی وجود عکس در کدهای گیت‌هاب؛ اگر عکسی نبود کادر خاکستری شیک نشان داده می‌شود
+    // check if we don't have a picture, show it grey
     let avatarContent = '';
     if (d.src) {
       avatarContent = `<img src="${d.src}" alt="${d.name}" style="width:100%; height:100%; object-fit:cover; border-radius:4px;">`;
@@ -649,8 +649,7 @@ function buildDetectives() {
       avatarContent = `<div style="font-size:20px; color:var(--ink-faded); font-weight:bold;">${d.name[0]}</div>`;
     }
 
-    // ۲. بررسی رشته تحصیلی: برای آلنا "Mind Brain" و برای بقیه "Human Movement Analytics" رندر می‌شود
-    // ۳. عبارت SS 2026 نیز از این بخش حذف شده است
+
     const programName = d.program || "Human Movement Analytics";
 
     card.innerHTML = `
@@ -725,17 +724,17 @@ function openNode(index) {
   document.getElementById('modal-text-panel').scrollTop = 0;
 
   // ═══════════════════════════════════════════════════════════════
-  // هوشمندسازی نمایش ستون تصاویر بر اساس کلاس‌های CSS
+  // Showing column of pictures based on cards number
   // ═══════════════════════════════════════════════════════════════
   const figPanel = document.querySelector('.modal-fig-panel');
   if (index >= 4) {
-    if (figPanel) figPanel.style.display = 'none'; // مخفی شدن ستون چپ در ۳ کارت آخر
+    if (figPanel) figPanel.style.display = 'none'; // hidden this in last 3 cards
   } else {
-    if (figPanel) figPanel.style.display = 'flex'; // لود عادی دو ستونه برای ۳ کارت اول
+    if (figPanel) figPanel.style.display = 'flex'; // loading this in first 4th cards
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // خطوط حیاتی باز شدن و فعال‌سازی انیمیشن مدال
+  // showing model animate
   // ═══════════════════════════════════════════════════════════════
   const ov = document.getElementById('modal-overlay');
   if (ov) {
@@ -744,7 +743,7 @@ function openNode(index) {
     setTimeout(() => ov.classList.remove('anim-in'), 300);
   }
 
-  // توابع سیستمی بورد
+  // system board
   if (typeof unlockNext === 'function') unlockNext(index);
   if (typeof updateDots === 'function') updateDots(index);
 }
@@ -812,15 +811,11 @@ function openLightbox(src,cap){document.getElementById('lightbox-img').src=src;d
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
 
 // ═══════════════════════════════════════════════════════════════
-//  FIGURE PIN
-// ═══════════════════════════════════════════════════════════════
-// ═══════════════════════════════════════════════════════════════
-//  FIGURE PIN (اصلاح شده برای باز شدن مستقیم عکس بدون منوی آپلود)
+//  FIGURE PIN 
 // ═══════════════════════════════════════════════════════════════
 function openFigPin(fi){
   const f = figures[fi];
-  const src = f.src || figPinImages[fi]; // اولویت با عکس تعریف شده در پروژه است
-  
+  const src = f.src || figPinImages[fi]; // priority by picture in project
   if(src) {
     openLightbox(src, f.caption);
   }
